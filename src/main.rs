@@ -20,7 +20,7 @@ fn dont_dangle() -> String {
 // slices!!
 // A slice is a data type that doesn't have ownership
 // Reference sequence of elements in a collection rather than the whole collection
-
+// &str would allow a string literal and String
 fn first_word(s: &String) -> usize {
     // convert to array of bytes
     let bytes = s.as_bytes();
@@ -39,6 +39,7 @@ fn first_word(s: &String) -> usize {
 
 // let's rewrite this with slices
 // &str refers to a string slice
+// also &String can just be &str, they are the same thing
 fn first_word_better(s: &String) -> &str {
     let bytes = s.as_bytes();
 
@@ -116,6 +117,7 @@ fn main() {
 
     // Better method
     {
+        // no point in making this mutable since it cannot be mutably referenced after first_word_better()
         let mut s = String::from("yeah so that happened");
 
         let word = first_word_better(&s);
@@ -126,6 +128,20 @@ fn main() {
 
         println!("the first word is \"{}\"", word);
     }
+
+    {
+        // Next up on our list is string literals, how fun
+        // a string literal is LITERALLY (lol) just a slice of a string
+        
+        let a_string = String::from("sure"); // type is String
+
+        // string literals are immutable, because &str is an immutable reference
+        let a_string_literal = "sure"; // type here is &str
+        let a_string_slice = &a_string[..];
+
+        assert_eq!(a_string_literal, a_string_slice); // both are immutable references (&str)
+    }
+
 
     // last line of scope doesn't need a semicolon, interesting
 }
