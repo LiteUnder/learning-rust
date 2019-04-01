@@ -1,5 +1,5 @@
 mod shapes;
-use shapes::Rect;
+use shapes::*;
 
 // A few interesting notes on syntax here
 // paramaters are declared as <name>: <type>
@@ -150,8 +150,13 @@ fn main() {
         let bigrect = Rect::rect(670, 1299);
         let smallsquare = Rect::square(20);
 
+        let circle = Circle::new(7f64);
+
         println!("big rectangle is {} square crabs", bigrect.area());
         println!("small square is {} square crabs", smallsquare.area());
+
+        println!("circumference of circle: {} crabs", circle.circumference());
+        println!("area of circle: {} square crabs", circle.area());
     }
     // last line of scope doesn't need a semicolon, interesting
 }
