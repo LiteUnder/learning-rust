@@ -37,4 +37,3 @@ let user2 = User {
     username: String::from("yetAnotherUserBoi"),
     ..user1
 };
-

@@ -135,7 +135,7 @@ fn main() {
     {
         // Next up on our list is string literals, how fun
         // a string literal is LITERALLY (lol) just a slice of a string
-        
+
         let a_string = String::from("sure"); // type is String
 
         // string literals are immutable, because &str is an immutable reference
