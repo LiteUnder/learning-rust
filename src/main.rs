@@ -1,3 +1,5 @@
+mod rects;
+
 // A few interesting notes on syntax here
 // paramaters are declared as <name>: <type>
 // return type isn't required, but syntax is -> <type>
@@ -142,6 +144,11 @@ fn main() {
         assert_eq!(a_string_literal, a_string_slice); // both are immutable references (&str)
     }
 
+    {
+        // Struct stuff
+        let bigrect = rects::buildRect(882, 854);
 
+        println!("{}cm^2", rects::area(bigrect));
+    }
     // last line of scope doesn't need a semicolon, interesting
 }
