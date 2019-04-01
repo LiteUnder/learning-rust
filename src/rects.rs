@@ -3,13 +3,18 @@ pub struct Rect {
     height: u32,
 }
 
-pub fn buildRect(width: u32, height: u32) -> Rect {
+// I wonder if this could be implemented
+pub fn build_rect(width: u32, height: u32) -> Rect {
     Rect {
         width: width,
         height: height,
     }
 }
 
-pub fn area(rectangle: Rect) -> u32 {
-    rectangle.width * rectangle.height
+// implementation of method for struct
+// structs are now cool
+impl Rect {
+    pub fn area(&self) -> u32 {
+        self.width * self.height
+    }
 }

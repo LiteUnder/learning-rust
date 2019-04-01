@@ -146,9 +146,9 @@ fn main() {
 
     {
         // Struct stuff
-        let bigrect = rects::buildRect(882, 854);
+        let bigrect = rects::build_rect(882, 854);
 
-        println!("{}cm^2", rects::area(bigrect));
+        println!("{} square crabs", bigrect.area());
     }
     // last line of scope doesn't need a semicolon, interesting
 }
