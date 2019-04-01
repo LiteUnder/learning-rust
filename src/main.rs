@@ -1,4 +1,5 @@
-mod rects;
+mod shapes;
+use shapes::Rect;
 
 // A few interesting notes on syntax here
 // paramaters are declared as <name>: <type>
@@ -146,9 +147,11 @@ fn main() {
 
     {
         // Struct stuff
-        let bigrect = rects::build_rect(882, 854);
+        let bigrect = Rect::rect(670, 1299);
+        let smallsquare = Rect::square(20);
 
-        println!("{} square crabs", bigrect.area());
+        println!("big rectangle is {} square crabs", bigrect.area());
+        println!("small square is {} square crabs", smallsquare.area());
     }
     // last line of scope doesn't need a semicolon, interesting
 }
