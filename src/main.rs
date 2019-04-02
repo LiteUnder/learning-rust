@@ -1,10 +1,12 @@
-mod shapes;
-use shapes::*;
+mod tuples;
+mod shapes; // shapes module, will include shapes.rs despite it not technically having a module defined
+use shapes::*; // Use everything inside of shapes (Rect & Circle + their implementations)
 
 // A few interesting notes on syntax here
 // paramaters are declared as <name>: <type>
 // return type isn't required, but syntax is -> <type>
 fn add(a: i32, b: i32) -> i32 {
+    // this is an expression
     a + b // last line of function is always run as a return
 }
 
@@ -26,7 +28,7 @@ fn dont_dangle() -> String {
 // &str would allow a string literal and String
 fn first_word(s: &String) -> usize {
     // convert to array of bytes
-    let bytes = s.as_bytes();
+    let bytes = s.as_bytes(); // this is a statement, not an expression, so it doesn't return a value
 
     // this is a little weird
     // iter() returns each element of a collection and enumerate() returns each elements as a part of a tuple
@@ -159,4 +161,6 @@ fn main() {
         println!("area of circle: {} square crabs", circle.area());
     }
     // last line of scope doesn't need a semicolon, interesting
+
+    tuples::tuples();
 }
