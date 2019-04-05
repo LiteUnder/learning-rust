@@ -156,6 +156,7 @@ fn main() {
 
         println!("big rectangle is {} square crabs", bigrect.area());
         println!("small square is {} square crabs", smallsquare.area());
+        println!("permiiter of small square is {} crabs", smallsquare.perimiter());
 
         println!("circumference of circle: {} crabs", circle.circumference());
         println!("area of circle: {} square crabs", circle.area());
