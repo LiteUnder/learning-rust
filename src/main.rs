@@ -1,6 +1,7 @@
 mod tuples;
 mod shapes; // shapes module, will include shapes.rs despite it not technically having a module defined
 use shapes::*; // Use everything inside of shapes (Rect & Circle + their implementations)
+mod common_collections;
 
 // A few interesting notes on syntax here
 // paramaters are declared as <name>: <type>
@@ -164,4 +165,7 @@ fn main() {
     // last line of scope doesn't need a semicolon, interesting
 
     tuples::tuples();
+    common_collections::vectors();
+    common_collections::strings();
+    common_collections::hash_maps();
 }
